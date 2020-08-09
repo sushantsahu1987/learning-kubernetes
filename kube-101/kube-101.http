@@ -1,0 +1,64 @@
+GET http://localhost:3000/users 
+Content-Type: application/json
+
+###
+
+PUT http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "user": {
+    "firsname": "sushant",
+    "lastname": "sahu",
+    "age": 33
+    }    
+}
+
+###
+
+PUT http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "user": {
+        "firsname": "khushboo",
+        "lastname": "sewak",
+        "age": 30
+    }    
+}
+
+###
+
+PUT http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "user": {
+        "firsname": "Oreo",
+        "lastname": "Doggo",
+        "age": 2
+    }    
+}
+
+###
+
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "user": {
+        "firsname": "Oreo",
+        "lastname": "Puppy",
+        "age": 2,
+        "id": 3
+    }    
+}
+
+###
+
+DELETE http://localhost:3000/user/3
+Content-Type: application/json
+
+
+
+
