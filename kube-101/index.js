@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 let users = require("./data");
-let unique_id = 1;
+let unique_id = users.length;
 
 const app = express();
 const PORT = process.env.PORT;
