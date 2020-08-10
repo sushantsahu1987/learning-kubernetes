@@ -23,12 +23,26 @@ Learning kubernetes one hour at a time
 
 
 #### Tooling
-    docker tag sushantsahu/kube-node-101 sushantsahu/kube-node-101:1.0.0
+    docker tag sushantsahu/kube-node-101-tools sushantsahu/kube-node-101-tools:1.0.0
     docker push sushantsahu/kube-node-101:1.0.0
 
 #### Prod Slim
-    docker tag sushantsahu/kube-node-101 sushantsahu/kube-node-101:1.0.0
-    docker push sushantsahu/kube-node-101:1.0.0
+    docker tag sushantsahu/kube-node-101 sushantsahu/kube-node-101-run:1.0.0
+    docker push sushantsahu/kube-node-101-run:1.0.0
+
+### kubernetes: helm
+    helm install kube-101 chart/kube-101
+    helm list --all
+    helm status kube-101
+    helm history kube-101
+    helm rollback kube-101 <revision_no>
+
+    kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services kube-101-service
+    kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}"
+    kubectl get services
+    kubectl get pods
+
+    
 
 ### Reference
     https://github.com/CloudNativeJS/docker
