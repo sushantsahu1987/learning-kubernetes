@@ -1,5 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const health = require("@cloudnative/health-connect");
+
+const healthcheck = new health.HealthChecker();
+const pingcheck = new health.PingCheck("www.google.com");
+healthcheck.registerReadinessCheck(pingcheck);
+
 let users = require("./data");
 let unique_id = users.length;
 
@@ -8,6 +14,9 @@ const PORT = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use('/live', health.LivenessEndpoint(healthcheck));
+app.use('/ready', health.ReadinessEndpoint(healthcheck));
 
 app.get("/users", (req, resp) => {
   resp.send({ users });

@@ -11,6 +11,7 @@
   "author": "Sushant Sahu <sushant87@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@cloudnative/health-connect": "^2.1.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
   }
