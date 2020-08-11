@@ -1,10 +1,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-replicaCount: 4
+replicaCount: 3
 revisionHistoryLimit: 5
 image:
   repository: sushantsahu/kube-node-101-run
-  tag: 1.1.0
+  tag: 1.2.0
   pullPolicy: IfNotPresent 
   resources:
     requests:

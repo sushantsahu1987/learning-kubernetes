@@ -1,3 +1,4 @@
+const prome = require('appmetrics-prometheus').attach()
 const express = require("express");
 const bodyParser = require("body-parser");
 const health = require("@cloudnative/health-connect");
